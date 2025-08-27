@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg,rgba(254, 243, 218, 1) 0%, rgba(220, 240, 206, 1) 100%);
+}
+
+header {
+  text-align: center;
+  width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 500px;
+}
+
+h1 {
+    margin-bottom: 32px;
+    color: #25233c;
+}
+
+h3 {
+    margin-top: 24px;
+    margin-bottom: 38px;
+    color: #25233c;
+}
+
+p {
+    color: #25233c;
+}
+
+.spaceArea {
+    height: 100px;
+}
+
+#typeNoteSection {
+    display: flex;
+    justify-content: center;
+}
+
+#showNoteSection {
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-around;
+    gap: 32px;
+    margin-top: 0;
+    margin-bottom: 100px;
+}

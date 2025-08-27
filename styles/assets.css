@@ -1,0 +1,19 @@
+.check-icon {
+    height: 39px;
+    cursor: pointer;
+}
+
+.check-icon:hover {
+    opacity: 50%;
+    transition: all 0.2s ease;
+}
+
+.notes-icons {
+    height: 26px;
+    cursor: pointer;
+}
+
+.notes-icons:hover {
+    opacity: 50%;
+    transition: all 0.2s ease;
+}

@@ -1,0 +1,50 @@
+@media (max-width: 1200px) {
+    #showNoteSection {
+        display: flex;
+        flex-direction: column;    
+        justify-content: center;
+    }
+}
+
+@media (max-width: 510px) {
+   .inputContainer {
+        display: flex;             
+        flex-direction: column;    
+        justify-content: center;
+    } 
+
+    input {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 390px) {
+    .collectNotesArea {
+        width: 300px;
+        height: auto;
+        background: #ffffff;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 8px 0 12px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    .submittedContainer {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .submittedNote {
+        position: relative;
+        width: 270px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .buttonLine {
+        position: absolute;
+        top: 160px;
+        left: 180px;
+        display: flex;
+        gap: 6px;
+    }
+}

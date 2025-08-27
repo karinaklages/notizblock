@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+    <link rel="icon" href="./assets/icons/favicon.png" type="image/png">
+    <title>Notizblock</title>
+</head>
+<body onload="renderNotes()">
+    <div class="spaceArea"></div>
+    <header>
+        <h1>Meine Notizen</h1>
+    </header>
+    
+    <main>
+        <section id="typeNoteSection">
+            <div class="inputContainer">
+                <input id="noteTitleInput" type="text" placeholder="Titel" maxlength="16">
+                <input id="noteInput" type="text" placeholder="Notiz" maxlength="140">
+
+                <img onclick="addNote()" class="check-icon" src="./assets/icons/check-icon.png" alt="Check Icon">
+            </div>
+        </section>
+        
+        <section id="showNoteSection"></section>   
+    </main>
+
+    <script src="./scripts/template.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
