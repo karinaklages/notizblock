@@ -42,21 +42,3 @@ h3 {
 p {
     color: #25233c;
 }
-
-.spaceArea {
-    height: 100px;
-}
-
-#typeNoteSection {
-    display: flex;
-    justify-content: center;
-}
-
-#showNoteSection {
-    display: flex;
-    flex-direction: row;    
-    justify-content: space-around;
-    gap: 32px;
-    margin-top: 0;
-    margin-bottom: 100px;
-}

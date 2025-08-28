@@ -38,10 +38,9 @@ function addNote() {
 
 
 // Shows the notes section in html
-function showNoteSection(index) {
+function showNoteSection() {
     let noteSection = document.getElementById("showNoteSection")
-    noteSection.innerHTML = "";
-    noteSection.innerHTML += noteSectionTemplate(index);
+    noteSection.innerHTML = noteSectionTemplate();
 }
 
 
