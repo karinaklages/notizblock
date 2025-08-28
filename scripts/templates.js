@@ -46,7 +46,7 @@ function getTrashNoteTemplate(indexTrashNote) {
 // Template to show all the notes
 function noteSectionTemplate(contentId, archiveId, trashId) {
     return `
-        <section id="showNoteSection">
+        <section class="show-note-section">
             <div class="collectNotesArea">
                 <h3>Neu</h3>
                 <div id="${contentId}"></div>    

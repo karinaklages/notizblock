@@ -1,5 +1,5 @@
 @media (max-width: 1200px) {
-    #showNoteSection {
+    .show-note-section {
         display: flex;
         flex-direction: column;    
         justify-content: center;
