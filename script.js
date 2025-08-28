@@ -140,15 +140,6 @@ function deleteNote(indexTrashNote) {
 }
 
 
-
-
-
-
-
-
-
-
-
 // Restores from trash to archives
 function restoreFromTrashToArchives(indexTrashNote) {
     let restoredNote = trashnotes.splice(indexTrashNote, 1);
