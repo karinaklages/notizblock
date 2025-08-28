@@ -10,34 +10,63 @@ let trashnotes = [ ];
 
 
 // Functions
+// Using local storage
+function init() {
+    getFromLocalStorage();
+    renderNotes();
+}
+
+
 // Adds title and note with onclick in index.html
 function addNote() {
-    let noteInputRef = document.getElementById("noteInput");
     let noteTitleInputRef = document.getElementById("noteTitleInput");
+    let noteInputRef = document.getElementById("noteInput");
+    
 
     // If empty, abort function
-    if (noteInputRef.value.trim() === "" || noteTitleInputRef.value.trim() === "") {
+    if (noteTitleInputRef.value.trim() === "" || noteInputRef.value.trim() === "") {
         return;
     }
 
     if (notes.length >= 10) {
-        noteInputRef.value = "";
         noteTitleInputRef.value = "";
+        noteInputRef.value = "";
         return;
     }
 
     // Saves a note, adds it to the array and clears the input-space
-    notes.push(noteInputRef.value);
     notesTitles.push(noteTitleInputRef.value);
+    notes.push(noteInputRef.value);
 
+    saveToLocalStorage();
     renderNotes();
 
-    noteInputRef.value = "";
     noteTitleInputRef.value = "";
+    noteInputRef.value = "";
+
+}
+
+// Stringify saves strings
+function saveToLocalStorage(){
+    localStorage.setItem("notesData", JSON.stringify({
+        notesTitles: notesTitles,
+        notes: notes
+    }));
 }
 
 
-// Shows the notes section in html
+// Parse saves an array
+function getFromLocalStorage() {
+    let myArray = JSON.parse(localStorage.getItem("notesData"));
+
+    if(myArray != null){
+        notesTitles = myArray.notesTitles;
+        notes = myArray.notes;
+    } 
+}
+
+
+// Shows the three notes section in html
 function showNoteSection() {
     let noteSection = document.getElementById("showNoteSection")
     noteSection.innerHTML = noteSectionTemplate();
@@ -103,12 +132,21 @@ function pushToTrash(indexNote) {
 }
 
 
-// Deletes a note completely
+// Deletes a trash note completely
 function deleteNote(indexTrashNote) {
     trashnotes.splice(indexTrashNote, 1);
 
     renderTrashNotes()
 }
+
+
+
+
+
+
+
+
+
 
 
 // Restores from trash to archives
