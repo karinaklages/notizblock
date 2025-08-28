@@ -43,7 +43,6 @@ function addNote() {
 
     noteTitleInputRef.value = "";
     noteInputRef.value = "";
-
 }
 
 // Stringify saves strings
@@ -108,26 +107,28 @@ function renderTrashNotes() {
 
 // Pushes a note to archive
 function pushToArchive(indexNote) {
+    let archiveNoteTitle = notesTitles.splice(indexNote, 1);
+    archiveNotesTitles.push(archiveNoteTitle[0]);
+
     let archiveNote = notes.splice(indexNote, 1);
     archivenotes.push(archiveNote[0]);
 
-    let archiveNoteTitle = notesTitles.splice(indexNote, 1);
-    archiveNotesTitles.push(archiveNoteTitle[0]);
-    
     renderNotes()
     renderArchiveNotes()
+    renderTrashNotes()
 }
 
 
 // Pushes a note to trash
 function pushToTrash(indexNote) {
+    let trashNoteTitle = notesTitles.splice(indexNote, 1);
+    trashNotesTitles.push(trashNoteTitle[0]);
+
     let trashNote = notes.splice(indexNote, 1);
     trashnotes.push(trashNote[0]);
 
-    let trashNoteTitle = notesTitles.splice(indexNote, 1);
-    trashNotesTitles.push(trashNoteTitle[0]);
-    
     renderNotes()
+    renderArchiveNotes()
     renderTrashNotes()
 }
 
@@ -136,44 +137,49 @@ function pushToTrash(indexNote) {
 function deleteNote(indexTrashNote) {
     trashnotes.splice(indexTrashNote, 1);
 
+    renderNotes()
+    renderArchiveNotes()
     renderTrashNotes()
 }
 
 
 // Restores from trash to archives
 function restoreFromTrashToArchives(indexTrashNote) {
-    let restoredNote = trashnotes.splice(indexTrashNote, 1);
-    archivenotes.push(restoredNote[0]);
-
     let restoredTitle = trashNotesTitles.splice(indexTrashNote, 1);
     archiveNotesTitles.push(restoredTitle[0]);
 
-    renderNotes();
-    renderArchiveNotes();
+    let restoredNote = trashnotes.splice(indexTrashNote, 1);
+    archivenotes.push(restoredNote[0]);
+
+    renderNotes()
+    renderArchiveNotes()
+    renderTrashNotes()
 }
 
 
 // Restores from trash to notes
 function restoreFromTrashToNotes(indexTrashNote) {
-    let restoredNote = trashnotes.splice(indexTrashNote, 1);
-    notes.push(restoredNote[0]);
-
     let restoredTitle = trashNotesTitles.splice(indexTrashNote, 1);
     notesTitles.push(restoredTitle[0]);
 
-    renderNotes();
-    renderTrashNotes();
+    let restoredNote = trashnotes.splice(indexTrashNote, 1);
+    notes.push(restoredNote[0]);
+
+    renderNotes()
+    renderArchiveNotes()
+    renderTrashNotes()
 }
 
 
 // Restores from archive to notes
 function restoreFromArchiveToNotes(indexArchiveNote) {
-    let restoredNote = archivenotes.splice(indexArchiveNote, 1);
-    notes.push(restoredNote[0]);
-
     let restoredTitle = archiveNotesTitles.splice(indexArchiveNote, 1);
     notesTitles.push(restoredTitle[0]);
     
-    renderNotes();
-    renderTrashNotes();
+    let restoredNote = archivenotes.splice(indexArchiveNote, 1);
+    notes.push(restoredNote[0]);
+
+    renderNotes()
+    renderArchiveNotes()
+    renderTrashNotes()
 }
