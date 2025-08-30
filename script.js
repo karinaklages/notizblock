@@ -114,9 +114,7 @@ function moveNote(indexNote, startKey, destinationKey) {
     let note = allNotes[startKey].splice(indexNote, 1);
     allNotes[destinationKey].push(note[0]);
 
-    renderNotes();
-    renderArchiveNotes();
-    renderTrashNotes();
+    renderAllNotes()
 }
 
 
@@ -125,6 +123,11 @@ function deleteNote(indexTrashNote) {
     allNotes.trashNotesTitles.splice(indexTrashNote, 1);
     allNotes.trashNotes.splice(indexTrashNote, 1);
   
+    renderAllNotes()
+}
+
+
+function renderAllNotes() {
     renderNotes();
     renderArchiveNotes();
     renderTrashNotes();
