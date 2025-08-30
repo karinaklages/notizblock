@@ -2,11 +2,11 @@
 function getNoteTemplate(indexNote) {
     return `
         <div class="submittedContainer">
-            <p class="submittedNote"><strong>${notesTitles[indexNote]}</strong><br><br>${notes[indexNote]}</p>
+            <p class="submittedNote"><strong>${allNotes.notesTitles[indexNote]}</strong><br><br>${allNotes.notes[indexNote]}</p>
             <div class="buttonLine">
                 <img class="notes-icons" src="./assets/icons/notes-icon.png" alt="Note Icon">
-                <img onclick="pushToArchive(${indexNote})" class="notes-icons" src="./assets/icons/archive-icon.png" alt="Archive Icon">
-                <img onclick="pushToTrash(${indexNote})" class="notes-icons" src="./assets/icons/delete-icon.png" alt="Delete Icon">
+                <img onclick="moveNote(${indexNote}, 'notes', 'archiveNotes')" class="notes-icons" src="./assets/icons/archive-icon.png" alt="Archive Icon">
+                <img onclick="moveNote(${indexNote}, 'notes', 'trashNotes')" class="notes-icons" src="./assets/icons/delete-icon.png" alt="Delete Icon">
             </div>
         </div>
     `;
@@ -14,14 +14,14 @@ function getNoteTemplate(indexNote) {
 
 
 // Template for submits to archive
-function getArchiveNoteTemplate(indexNote) {
+function getArchiveNoteTemplate(indexArchiveNote) {
     return `
         <div class="submittedContainer">
-            <p class="submittedNote"><strong>${archiveNotesTitles[indexNote]}</strong><br><br>${archivenotes[indexNote]}</p>
+            <p class="submittedNote"><strong>${allNotes.archiveNotesTitles[indexArchiveNote]}</strong><br><br>${allNotes.archiveNotes[indexArchiveNote]}</p>
             <div class="buttonLine">
-                <img onclick="restoreFromArchiveToNotes(${indexNote})" class="notes-icons" src="./assets/icons/notes-icon.png" alt="Note Icon">
+                <img onclick="moveNote(${indexArchiveNote}, 'archiveNotes', 'notes')" class="notes-icons" src="./assets/icons/notes-icon.png" alt="Note Icon">
                 <img class="notes-icons" src="./assets/icons/archive-icon.png" alt="Archive Icon">
-                <img onclick="pushToTrash(${indexNote})" class="notes-icons" src="./assets/icons/delete-icon.png" alt="Delete Icon">
+                <img onclick="moveNote(${indexArchiveNote}, 'archiveNotes', 'trashNotes')" class="notes-icons" src="./assets/icons/delete-icon.png" alt="Delete Icon">
             </div>
         </div>
     `;
@@ -32,10 +32,10 @@ function getArchiveNoteTemplate(indexNote) {
 function getTrashNoteTemplate(indexTrashNote) {
     return `
         <div class="submittedContainer">
-            <p class="submittedNote"><strong>${trashNotesTitles[indexTrashNote]}</strong><br><br>${trashnotes[indexTrashNote]}</p>
+            <p class="submittedNote"><strong>${allNotes.trashNotesTitles[indexTrashNote]}</strong><br><br>${allNotes.trashNotes[indexTrashNote]}</p>
             <div class="buttonLine">
-                <img onclick="restoreFromTrashToNotes(${indexTrashNote})" class="notes-icons" src="./assets/icons/notes-icon.png" alt="Note Icon">
-                <img onclick="pushToArchive(${indexTrashNote})" class="notes-icons" src="./assets/icons/archive-icon.png" alt="Archive Icon">
+                <img onclick="moveNote(${indexTrashNote}, 'trashNotes', 'notes')" class="notes-icons" src="./assets/icons/notes-icon.png" alt="Note Icon">
+                <img onclick="moveNote(${indexTrashNote}, 'trashNotes', 'archiveNotes')" class="notes-icons" src="./assets/icons/archive-icon.png" alt="Archive Icon">
                 <img onclick="deleteNote(${indexTrashNote})" class="notes-icons" src="./assets/icons/delete-icon.png" alt="Delete Icon">
             </div>
         </div>
