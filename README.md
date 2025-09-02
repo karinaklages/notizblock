@@ -9,4 +9,4 @@ This project is part of the Developer Akademie's software developer training pro
 
 ###
 
-![Fotogram](./assets/img/notizen.jpg)
+![Notizblock](./assets/img/notizen.jpg)
