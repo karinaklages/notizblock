@@ -63,9 +63,9 @@ notizblock/
 │       ├── mobile.css   # Responsive styles
 │       └── standard.css # Global styles
 │
-├── .gitignore           # Git ignore rules
+├── .gitignore
 ├── index.html           # Application entry point
 ├── script.js            # Main application logic
 ├── style.css            # Main stylesheet
 └── README.md            # Project documentation
-`
+```
